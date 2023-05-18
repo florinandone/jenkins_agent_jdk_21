@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag oraclelinux-8-5-java-11-openjdk
+      run: docker build . --file Dockerfile --tag oraclelinux-8-5-stunnel:$(date +%s)
