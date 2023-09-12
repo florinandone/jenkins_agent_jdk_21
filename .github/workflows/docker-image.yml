@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image CI jdk17
 
 on:
   push:
