@@ -1,13 +1,13 @@
 # build with  
-# podman build --file Dockerfile --tag oraclelinux-8-5-java-11-openjdk
+# podman build --file Dockerfile --tag oraclelinux-8-5-java-17-openjdk
 FROM oraclelinux:8.5
 
 #RUN yum -y update
-RUN yum -y install java-11-openjdk 
-RUN yum -y install java-11-openjdk-devel
+RUN yum -y install java-17-openjdk 
+RUN yum -y install java-17-openjdk-devel
 RUN yum -y install net-tools
 
-ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 
 
 RUN yum -y install sudo
@@ -15,7 +15,7 @@ RUN yum -y install rsync
 
 
 # The below is copied from 
-# https://github.com/keeganwitt/docker-gradle/blob/master/jdk11/Dockerfile
+# https://github.com/keeganwitt/docker-gradle/blob/master/jdk17/Dockerfile
 CMD ["gradle"]
 
 ENV GRADLE_HOME /opt/gradle

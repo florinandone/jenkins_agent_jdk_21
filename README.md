@@ -1,1 +1,1 @@
-# jenkins_agent_jdk_11
+# jenkins_agent_jdk_17
