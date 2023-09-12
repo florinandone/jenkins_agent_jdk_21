@@ -48,19 +48,17 @@ RUN set -o errexit -o nounset \
     && which git \
     && which git-lfs 
 
-ENV GRADLE_VERSION 7.3.3
-ARG GRADLE_DOWNLOAD_SHA256=c9490e938b221daf0094982288e4038deed954a3f12fb54cbf270ddf4e37d879
+ENV GRADLE_VERSION 8.3
+ARG GRADLE_DOWNLOAD_SHA256=591855b517fc635b9e04de1d05d5e76ada3f89f5fc76f87978d1b245b4f69225
 RUN set -o errexit -o nounset \
     && echo "Downloading Gradle" \
     && wget --no-verbose --output-document=gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" \
     \
-    && echo "Checking download hash" \
+    && echo "Checking Gradle download hash" \
     && echo "${GRADLE_DOWNLOAD_SHA256} *gradle.zip" | sha256sum --check - \
     \
     && echo "Installing Gradle" \
     && unzip gradle.zip \
     && rm gradle.zip \
     && mv "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}/" \
-    && ln --symbolic "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle \
-    \
-    && echo "Testing Gradle installation" \
+    && ln --symbolic "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle
