@@ -1,6 +1,6 @@
 # build with  
 # podman build --file Dockerfile --tag oraclelinux-8-5-java-21-openjdk
-FROM oraclelinux:8.5
+FROM oraclelinux:9
 
 #RUN yum -y update
 RUN yum -y install java-21-openjdk 
