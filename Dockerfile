@@ -1,13 +1,13 @@
 # build with  
-# podman build --file Dockerfile --tag oraclelinux-8-5-java-17-openjdk
+# podman build --file Dockerfile --tag oraclelinux-8-5-java-21-openjdk
 FROM oraclelinux:8.5
 
 #RUN yum -y update
-RUN yum -y install java-17-openjdk 
-RUN yum -y install java-17-openjdk-devel
+RUN yum -y install java-21-openjdk 
+RUN yum -y install java-21-openjdk-devel
 RUN yum -y install net-tools
 
-ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 
 
 RUN yum -y install sudo
@@ -15,7 +15,7 @@ RUN yum -y install rsync
 
 
 # The below is copied from 
-# https://github.com/keeganwitt/docker-gradle/blob/master/jdk17/Dockerfile
+# https://github.com/keeganwitt/docker-gradle/blob/master/jdk21/Dockerfile
 CMD ["gradle"]
 
 ENV GRADLE_HOME /opt/gradle
@@ -49,7 +49,7 @@ RUN set -o errexit -o nounset \
     && which git-lfs 
 
 ENV GRADLE_VERSION 8.3
-ARG GRADLE_DOWNLOAD_SHA256=591855b517fc635b9e04de1d05d5e76ada3f89f5fc76f87978d1b245b4f69225
+ARG GRADLE_DOWNLOAD_SHA256=591855b521fc635b9e04de1d05d5e76ada3f89f5fc76f87978d1b245b4f69225
 RUN set -o errexit -o nounset \
     && echo "Downloading Gradle" \
     && wget --no-verbose --output-document=gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" \
