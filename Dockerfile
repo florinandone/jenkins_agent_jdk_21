@@ -3,8 +3,8 @@
 FROM oraclelinux:9
 
 #RUN yum -y update
-RUN yum -y install java-21-openjdk 
-RUN yum -y install java-21-openjdk-devel
+RUN yum -y install jdk-21-headless 
+RUN yum -y install jdk-21-headful
 RUN yum -y install net-tools
 
 ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk
