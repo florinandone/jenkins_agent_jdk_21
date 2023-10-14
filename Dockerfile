@@ -2,7 +2,7 @@
 # podman build --file Dockerfile --tag oraclelinux-8-5-java-21-openjdk
 FROM oraclelinux:9
 
-#RUN yum -y update
+RUN yum -y update
 RUN yum list available '*jdk*'
 RUN yum -y install jdk-21-headless 
 RUN yum -y install jdk-21-headful
