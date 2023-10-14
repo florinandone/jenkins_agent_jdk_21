@@ -3,7 +3,7 @@
 FROM oraclelinux:9
 
 #RUN yum -y update
-RUN yum list available jdk
+RUN yum list available '*jdk*'
 RUN yum -y install jdk-21-headless 
 RUN yum -y install jdk-21-headful
 RUN yum -y install net-tools
