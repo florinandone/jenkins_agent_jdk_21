@@ -7,6 +7,8 @@ RUN yum list available '*jdk*'
 RUN yum -y install jdk-21-headless 
 RUN yum -y install jdk-21-headful
 RUN yum -y install net-tools
+RUN yum -y install lsof
+RUN yum -y install libpcap
 
 ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 
