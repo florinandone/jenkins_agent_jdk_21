@@ -4,8 +4,9 @@ FROM oraclelinux:9
 
 RUN yum -y update
 RUN yum list available '*jdk*'
-RUN yum -y install jdk-21-headless 
-RUN yum -y install jdk-21-headful
+# RUN yum -y install jdk-21-headless 
+# RUN yum -y install jdk-21-headful
+RUN yum -y install java-21-openjdk
 RUN yum -y install net-tools
 RUN yum -y install lsof
 RUN yum -y install libpcap
